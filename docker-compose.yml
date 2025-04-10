@@ -5,13 +5,13 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: ecommerce
     ports:
-      - "3306:3306"
+      - "3307:3306"
     restart: always
     volumes:
       - ./home/Desktop/data:/var/lib/mysql
     networks:
       - app_network
-  express_app:
+  backend:
     build:
       context: https://github.com/etec-integration-project/2025-backend-FacuLlamas.git
       dockerfile: Dockerfile
@@ -22,11 +22,9 @@ services:
   frontend:
     build:
       context: .
+      dockerfile: Dockerfile
     ports:
       - "80:80"
-    volumes:
-      - .:/app
-      - /app/node_modules
     networks:
       - app_network
 
