@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Order } from '../models/order.model';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { Order } from "../models/order.model";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class OrderService {
-  private apiUrl = 'http://localhost:3000/api/orders';
+  private apiUrl = "/api/orders";
 
   constructor(private http: HttpClient) {}
 

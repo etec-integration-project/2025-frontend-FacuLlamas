@@ -10,7 +10,7 @@ import { CartService } from "./cart.service";
   providedIn: "root",
 })
 export class UserService {
-  private apiUrl = "http://localhost:3000/api/users";
+  private apiUrl = "/api/users";
   private isLoggedInSubject = new BehaviorSubject<boolean>(this.isLoggedIn());
   isLoggedIn$ = this.isLoggedInSubject.asObservable(); // Observable para el estado de autenticación
 

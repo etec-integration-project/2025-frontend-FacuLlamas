@@ -8,8 +8,8 @@ import { UserService } from "./user.service";
   providedIn: "root",
 })
 export class CartService {
-  private apiUrl = "http://localhost:3000/api/carts";
-  private cartItemsUrl = "http://localhost:3000/api/cart-items";
+  private apiUrl = "/api/carts";
+  private cartItemsUrl = "/api/cart-items";
   private userService!: UserService;
 
   constructor(private http: HttpClient, private injector: Injector) {}

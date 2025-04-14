@@ -16,6 +16,8 @@ services:
       context: https://github.com/etec-integration-project/2025-backend-FacuLlamas.git
       dockerfile: Dockerfile
     restart: always
+    expose:
+      - "3000:3000"
     networks:
       - app_network
 
@@ -24,7 +26,9 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - "4200:80"
+    depends_on:
+      - backend
     networks:
       - app_network
 
